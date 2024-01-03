@@ -46,5 +46,5 @@ def predict():
     #now we will pass above predicted data to template
     return render_template("index.html",
                            prediction=prediction)
-if __name__==__main__:
+if __name__=='__main__':
     application.run()
