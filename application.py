@@ -12,7 +12,7 @@ def hello():
 @app.route("/harsha",methods=['GET'])
 def check():
     """new func"""
-    return "codegnan is in kits"
+    return "codegnan is in kits guntur"
 
 '''
 #First lets read the pickle file
