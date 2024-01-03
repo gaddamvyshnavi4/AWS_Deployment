@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 #for pg render we write render
 #@-->used for decoration
-app=Flask(__name__)
+application=Flask(__name__)
 '''
 @app.route("/")
 def hello():
@@ -19,12 +19,12 @@ def check():
 with open('House_Price.pkl','rb')as f:
     model=pickle.load(f)
     
-@app.route('/',methods=['GET'])
+@application.route('/',methods=['GET'])
 def home():
     return render_template("index.html")
 
 #api status code
-@app.route('/predict',methods=['POST'])
+@application.route('/predict',methods=['POST'])
 def predict():
     #form action get ayyela cheystadi req in flask
     Rooms=int(request.form['bedrooms'])
@@ -46,4 +46,4 @@ def predict():
     #now we will pass above predicted data to template
     return render_template("index.html",
                            prediction=prediction)
-app.run()
+application.run()
